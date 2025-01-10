@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.header {
+    background-color: #0044cc;
+    padding: 1rem 0;
+    color: white;
+    text-align: center;
+}
+
+.navbar .mainmenu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.navbar .menu-item {
+    text-decoration: none;
+    color: white;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.navbar .menu-item:hover {
+    background-color: #0033aa;
+}
+
+.main-content {
+    padding: 2rem;
+}
+
+.page-title h1 {
+    text-align: center;
+    color: #0044cc;
+}
+
+.form-container {
+    background: white;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-select,
+input[type="file"],
+.form-btn {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-btn {
+    background-color: #0044cc;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-btn:hover {
+    background-color: #0033aa;
+}
+
+.result-section {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.image-container img {
+    max-width: 70%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}

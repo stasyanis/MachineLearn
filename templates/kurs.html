@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+<section class="form-section">
+    <form action="/" method="POST" enctype="multipart/form-data" class="form-container">
+        <div class="form-group">
+            <label for="method_param">Выберите тип модели:</label>
+            <select class="form-select" id="method_param" name="method_param">
+                <option value="dense">Полносвязанная</option>
+                <option value="convolutional">Свёрточная сеть</option>
+                <option value="mixed">Смешанная</option>
+                <option value="transfer" selected>С переносом обучения</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="file">Загрузите изображение:</label>
+            <input type="file" id="file" name="file" accept="image/*" required>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" class="form-btn" value="Узнать Результат">
+        </div>
+    </form>
+</section>
+
+<section class="result-section">
+    <h1>{{ class_model }}</h1>
+
+    {% if processed_image %}
+        <div class="image-container">
+            <h2>Обработанное изображение:</h2>
+            <img src="{{ processed_image }}" alt="Обработанное изображение" class="processed-image">
+        </div>
+    {% endif %}
+</section>
+{% endblock %}
