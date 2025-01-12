@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 menu = [{"name": "Курсовая", "url": "models"}]
 
-classes = ['облачно', 'пасмурно', 'дождливо', 'солнечно', 'закат/восход']
+classes = ['облачно', 'туманно', 'дождливо', 'солнечно', 'закат/восход']
 
 model_dense = tf.keras.models.load_model('model/best_models/dense.keras')
 model_convolutional = tf.keras.models.load_model('model/best_models/convolutional.keras')

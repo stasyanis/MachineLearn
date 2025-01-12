@@ -46,6 +46,6 @@ model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=base_learning_rat
               metrics=['accuracy'])
 
 
-model.fit(train_dataset, epochs=10)
+model.fit(train_dataset, epochs=10, )
 
 model.save('convolutional.keras')

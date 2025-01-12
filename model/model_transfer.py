@@ -19,6 +19,18 @@ train_dataset = image_dataset_from_directory(
     shuffle=True
 )
 
+validation_dataset = image_dataset_from_directory(
+    train_dir,
+    validation_split=0.2,
+    subset="validation",
+    seed=42,
+    labels='inferred',
+    label_mode='int',
+    image_size=(160, 160),
+    batch_size=32,
+    shuffle=True
+)
+
 
 AUTOTUNE = tf.data.AUTOTUNE
 train_dataset = train_dataset.prefetch(buffer_size=AUTOTUNE)
@@ -66,6 +78,6 @@ model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=base_learning_rat
               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False),
               metrics=['accuracy'])
 
-model.fit(train_dataset, epochs=15)
+model.fit(train_dataset, epochs=15, validation_data=validation_dataset)
 
 model.save('transfer.keras')

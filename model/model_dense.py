@@ -5,9 +5,6 @@ from tensorflow.keras import Sequential
 from tensorflow.keras.layers import Dense, Dropout, Flatten, Rescaling, RandomFlip, RandomRotation, RandomZoom
 from tensorflow.keras.preprocessing import image_dataset_from_directory
 
-import matplotlib.pyplot as plt
-import random
-
 
 way = 'C:\\Users\\stask\\PycharmProjects\\Kursovstas\\model\data\\archive_ds\\dataset'
 train_dir = os.path.join(way, 'train')

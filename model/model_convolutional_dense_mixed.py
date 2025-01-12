@@ -5,8 +5,6 @@ from keras import Sequential
 from tensorflow.keras.layers import Dense, Conv2D, MaxPooling2D, Dropout, Flatten, Rescaling, RandomFlip, RandomRotation, RandomZoom
 from tensorflow.keras.preprocessing import image_dataset_from_directory
 
-import matplotlib.pyplot as plt
-import random
 
 
 way = 'C:\\Users\\stask\\PycharmProjects\\Kursovstas\\model\data\\archive_ds\\dataset'
@@ -17,6 +15,18 @@ train_dataset = image_dataset_from_directory(
     train_dir,
     validation_split=0.2,
     subset="training",
+    seed=42,
+    labels='inferred',
+    label_mode='int',
+    image_size=(160, 160),
+    batch_size=32,
+    shuffle=True
+)
+
+validation_dataset = image_dataset_from_directory(
+    train_dir,
+    validation_split=0.2,
+    subset="validation",
     seed=42,
     labels='inferred',
     label_mode='int',
@@ -47,7 +57,6 @@ model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=base_learning_rat
               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False),
               metrics=['accuracy'])
 
-
-model.fit(train_dataset, epochs=10)
+model.fit(train_dataset, epochs=10, validation_data=validation_dataset)
 
 model.save('convolutional_dense_mixed.keras')
